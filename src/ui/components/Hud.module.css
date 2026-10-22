@@ -1,0 +1,59 @@
+.hud {
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 10px;
+
+  button {
+    padding: 5px 9px;
+  }
+}
+
+/* second row: pause, speed, route, sound. Roomy touch targets. */
+.tools {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 0 10px 6px;
+
+  button {
+    min-width: 44px;
+    min-height: 36px;
+    padding: 4px 10px;
+  }
+}
+
+.score {
+  color: var(--accent);
+  min-width: 70px;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+}
+
+.wave {
+  letter-spacing: 0.08em;
+}
+
+.credits {
+  color: var(--gold);
+  text-shadow: 0 0 8px rgba(182, 255, 0, 0.5);
+}
+
+.go {
+  background: #0a3a2a;
+  border-color: #19d68a;
+  min-width: 46px;
+}
+
+.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: var(--glow-accent);
+}

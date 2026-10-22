@@ -1,0 +1,21 @@
+{
+  "name": "hex-heist",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "levels": "vite build --ssr tools/generate-levels.ts --outDir .tools --emptyOutDir --logLevel error && node .tools/generate-levels.js",
+    "bot": "vite build --ssr tools/bot.ts --outDir .tools-bot --emptyOutDir --logLevel error && node .tools-bot/bot.js"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4"
+  },
+  "dependencies": {
+    "preact": "^11.0.1"
+  }
+}

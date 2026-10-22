@@ -1,0 +1,57 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2, 4, 10, 0.72);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  animation: fadeIn 0.18s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 230px;
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(8, 14, 26, 0.92);
+  box-shadow: 0 0 24px rgba(0, 240, 255, 0.15);
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 4px;
+  font-size: 20px;
+  letter-spacing: 0.25em;
+  text-shadow: 2px 0 var(--mag), -2px 0 var(--accent);
+}
+
+.primary {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  border-color: var(--accent);
+  background: #062a3a;
+  box-shadow: var(--glow-accent);
+}
+
+.secondary {
+  display: flex;
+  gap: 8px;
+
+  button {
+    flex: 1;
+    padding: 8px 6px;
+    font-size: 12px;
+    color: var(--dim);
+  }
+}

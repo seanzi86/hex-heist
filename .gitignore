@@ -1,0 +1,20 @@
+# dependencies and build output
+node_modules/
+dist/
+
+# scratch output of `npm run levels` and `npm run bot`
+.tools/
+.tools-bot/
+
+# local tooling and editor/OS files
+.claude/
+.DS_Store
+.vscode/
+.idea/
+
+# logs, local env files, TypeScript build info
+*.log
+.env
+.env.*
+*.local
+*.tsbuildinfo

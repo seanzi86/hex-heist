@@ -1,0 +1,53 @@
+/* Global styles: design tokens, reset and base elements. Component styles live in *.module.css next to each component. */
+:root {
+  --bg: #04060d;
+  --panel: #080e1a;
+  --line: #12314a;
+  --text: #d6f4ff;
+  --dim: #6f8fa8;
+  --accent: #00f0ff;
+  --mag: #ff2bd6;
+  --gold: #b6ff00;
+  --bad: #ff3355;
+  --glow-accent: 0 0 10px rgba(0, 240, 255, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.2 ui-monospace, Menlo, Consolas, monospace;
+  overflow: hidden;
+}
+
+button {
+  background: #0a1626;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font: inherit;
+  cursor: pointer;
+
+  &:hover:not(:disabled) {
+    border-color: var(--accent);
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.35);
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+}
