@@ -1,5 +1,6 @@
-import { HW, Tile } from '../constants';
+import { HW, PALETTE, Tile } from '../constants';
 import { armTower, availableTowers, buildTower } from '../game/actions';
+import { addFx } from '../game/emit';
 import { startNextWave } from '../game/engine';
 import { center, dist } from '../geometry';
 import { canvas, toWorld } from '../render/viewport';
@@ -53,7 +54,13 @@ export function onCanvasPointerDown(e: PointerEvent): void {
   g.selected = null;
   if (session.placing) {
     const result = buildTower(session.placing, tile);
-    if (!result.ok) showToast(result.reason);
+    if (!result.ok) {
+      showToast(result.reason);
+      // flash the refused tile, and drop the red "blocked" ghost until the pointer moves again so it doesn't look stuck
+      const c = center(tile.x, tile.y);
+      addFx({ k: 'ring', x: c.x, y: c.y, col: PALETTE.red, life: 400, max: 400, r: 0.16 });
+      session.hover = null;
+    }
   }
   notify();
 }
